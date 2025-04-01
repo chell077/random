@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hidden Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        #catImage {
+            display: none;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Login</h2>
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="checkLogin()">Submit</button>
+    <div id="message"></div>
+    <img id="catImage" src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwall.alphacoders.com%2Fbig.php%3Fi%3D97184&psig=AOvVaw0H77Q_AR-i_oRDjC6QbU6d&ust=1743558805437000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCJjSt-7ctYwDFQAAAAAdAAAAABAZ" alt="Hi I'm a Cat! here is the flag: 嗯，这并不容易，你知道吗，你确定吗？下面是：”Rbvjj077{X'g_xyzdyk_Lyz_Nlps_Pfc_rft_Nzkc}qvxvg yntv”  and here's more info: xrl: puryy">
+
+    <script>
+        const hiddenUsername = "admin";
+        const hiddenPassword = "p@ssw0rd";
+        
+        function checkLogin() {
+            let user = document.getElementById("username").value;
+            let pass = document.getElementById("password").value;
+            
+            if (user === hiddenUsername && pass === hiddenPassword) {
+                document.getElementById("message").innerText = "Login successful!";
+                document.getElementById("catImage").style.display = "block";
+            } else {
+                document.getElementById("message").innerText = "Invalid credentials!";
+            }
+        }
+
+        // Simpan username dan password di console agar bisa ditemukan dengan inspect
+        console.log("Username: " + hiddenUsername);
+        console.log("Password: " + hiddenPassword);
+    </script>
+</body>
+</html>
